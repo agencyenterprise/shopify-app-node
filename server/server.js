@@ -37,7 +37,9 @@ app.prepare().then(() => {
 
       async afterAuth(ctx) {
         // Access token and shop available in ctx.state.shopify
-        const { shop } = ctx.state.shopify;
+        const shop =
+          ctx.state.shopify.shop ||
+          new URLSearchParams(ctx.request.url).get("shop");
 
         // Redirect to app with shop parameter upon auth
         ctx.redirect(`/?shop=${shop}`);
