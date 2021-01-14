@@ -2,11 +2,27 @@
   "name": "shopify-app-node",
   "version": "1.0.0",
   "description": "Shopify's node app for CLI tool",
+  "nodemonConfig": {
+    "watch": [
+      "server",
+      "pages",
+      "components",
+      "types",
+      "testing-utils"
+    ],
+    "ext": "ts,tsx,yaml,js",
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.test.js",
+      "src/openapi-lib/**"
+    ],
+    "exec": "cross-env NODE_ENV=development babel-node --extensions '.ts,.tsx,.js,.jsx' src/server"
+  },
   "scripts": {
     "test": "jest",
-    "dev": "cross-env NODE_ENV=development nodemon ./server/index.js --watch ./server/index.js",
+    "dev": "nodemon",
     "build": "NEXT_TELEMETRY_DISABLED=1 next build",
-    "start": "cross-env NODE_ENV=production node ./server/index.js"
+    "start": "cross-env NODE_ENV=production node src/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -47,7 +63,9 @@
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-stage-3": "^7.0.0",
-    "babel-jest": "26.6.2",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/jest": "^26.0.20",
+    "babel-jest": "^26.6.3",
     "babel-register": "^6.26.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.5",

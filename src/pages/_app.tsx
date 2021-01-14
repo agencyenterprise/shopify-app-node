@@ -15,7 +15,7 @@ import {
   NextPage,
   NextPageContext
 } from 'next';
-import ClientRouter from 'components/ClientRouter';
+import ClientRouter from 'src/components/ClientRouter';
 
 const client = new ApolloClient({
   fetch: fetch,
