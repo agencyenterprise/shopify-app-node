@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handler works 1`] = `
+Object {
+  "rates": Array [
+    Object {
+      "currency": "CAD",
+      "description": "This is the fastest option by far",
+      "max_delivery_date": "2013-04-12 14:48:45 -0400",
+      "min_delivery_date": "2013-04-12 14:48:45 -0400",
+      "service_code": "ON",
+      "service_name": "canadapost-overnight",
+      "total_price": "1295",
+    },
+    Object {
+      "currency": "USD",
+      "max_delivery_date": "2013-04-12 14:48:45 -0400",
+      "min_delivery_date": "2013-04-12 14:48:45 -0400",
+      "service_code": "2D",
+      "service_name": "fedex-2dayground",
+      "total_price": "2934",
+    },
+    Object {
+      "currency": "USD",
+      "max_delivery_date": "2013-04-12 14:48:45 -0400",
+      "min_delivery_date": "2013-04-12 14:48:45 -0400",
+      "service_code": "1D",
+      "service_name": "fedex-priorityovernight",
+      "total_price": "3587",
+    },
+  ],
+}
+`;

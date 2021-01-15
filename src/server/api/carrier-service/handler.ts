@@ -1,7 +1,5 @@
-export default function (req, res) {
-
-
-  return {
+export default function (ctx) {
+  ctx.body = {
     'rates': [
       {
         'service_name': 'canadapost-overnight',
